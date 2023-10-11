@@ -19,13 +19,18 @@ import com.example.stretch.databinding.FragmentYourWorkoutsHomeBinding
  */
 class YourWorkoutsDetailFragment : Fragment() {
     private var _binding: FragmentYourWorkoutsHomeBinding? = null
-    
     private val binding get() = _binding!!
     
     private lateinit var recyclerView: RecyclerView
     
+    private var workoutId: Int? = null
+    
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        
+        arguments?.let{
+            workoutId = it.getInt("workout_id")
+        }
     }
     
     override fun onCreateView(
@@ -41,7 +46,7 @@ class YourWorkoutsDetailFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         recyclerView = binding.recyclerView
         recyclerView.layoutManager = GridLayoutManager(context, 2)
-        recyclerView.adapter = YourWorkoutsDetailAdapter(1, requireContext())
+        recyclerView.adapter = YourWorkoutsDetailAdapter(workoutId!!, requireContext())
     }
     
     override fun onDestroyView() {

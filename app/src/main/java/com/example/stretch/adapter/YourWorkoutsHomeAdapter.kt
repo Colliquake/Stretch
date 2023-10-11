@@ -37,7 +37,7 @@ class YourWorkoutsHomeAdapter: RecyclerView.Adapter<YourWorkoutsHomeAdapter.Your
         
         holder.button.setOnClickListener {
             val action =
-                YourWorkoutsHomeFragmentDirections.actionYourWorkoutsHomeFragmentToYourWorkoutsDetailFragment2()
+                YourWorkoutsHomeFragmentDirections.actionYourWorkoutsHomeFragmentToYourWorkoutsDetailFragment2(position)
             holder.view.findNavController().navigate(action)
         }
     }

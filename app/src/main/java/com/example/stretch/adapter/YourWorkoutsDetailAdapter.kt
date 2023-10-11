@@ -1,6 +1,7 @@
 package com.example.stretch.adapter
 
 import android.content.Context
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -14,8 +15,8 @@ class YourWorkoutsDetailAdapter(val id: Int, context: Context): RecyclerView.Ada
     
     init{
         data = when(id){
-            1 -> listOf("Shoulders stretch 4", "Lower back stretch 2", "Chest exercise 6", "Quads stretch 1", "Forearm flexors 11")
-            2 -> listOf("Hamstrings stretch 2", "Shoulder exercise 5", "Back exercise 12", "Inner thighs stretch 7")
+            0 -> listOf("Shoulders stretch 4", "Lower back stretch 2", "Chest exercise 6", "Quads stretch 1", "Forearm flexors 11")
+            1 -> listOf("Hamstrings stretch 2", "Shoulder exercise 5", "Back exercise 12", "Inner thighs stretch 7")
             else -> listOf("Hips stretch 4", "Back exercise 2")
             //TODO: I THINK "ELSE" OPTION SHOULD REFER TO CREATING A NEW SET
         }

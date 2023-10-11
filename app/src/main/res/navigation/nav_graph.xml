@@ -18,5 +18,8 @@
         android:id="@+id/yourWorkoutsDetailFragment2"
         android:name="com.example.stretch.YourWorkoutsDetailFragment"
         android:label="fragment_your_workouts_detail"
-        tools:layout="@layout/fragment_your_workouts_detail" />
+        tools:layout="@layout/fragment_your_workouts_detail" >
+        <argument android:name="workout_id"
+            app:argType="integer" />
+    </fragment>
 </navigation>
