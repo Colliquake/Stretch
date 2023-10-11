@@ -1,6 +1,7 @@
 plugins {
     id("com.android.application")
     id("org.jetbrains.kotlin.android")
+    id("androidx.navigation.safeargs.kotlin")
 }
 
 android {
@@ -62,5 +63,4 @@ dependencies {
     
     // Jetpack Compose Integration
     implementation("androidx.navigation:navigation-compose:$nav_version")
-    
 }
