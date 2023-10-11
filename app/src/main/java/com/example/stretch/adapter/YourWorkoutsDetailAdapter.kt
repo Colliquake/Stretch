@@ -38,7 +38,8 @@ class YourWorkoutsDetailAdapter(val id: Int, context: Context): RecyclerView.Ada
     }
     
     override fun onBindViewHolder(holder: YourWorkoutsDetailViewHolder, position: Int) {
-    
+        val item = data[position]
+        holder.button.text = item.toString()
     }
     
 }

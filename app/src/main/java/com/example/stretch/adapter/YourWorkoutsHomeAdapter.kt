@@ -5,8 +5,10 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
+import androidx.navigation.findNavController
 import androidx.recyclerview.widget.RecyclerView
 import com.example.stretch.R
+import com.example.stretch.YourWorkoutsHomeFragmentDirections
 
 class YourWorkoutsHomeAdapter: RecyclerView.Adapter<YourWorkoutsHomeAdapter.YourWorkoutsHomeViewHolder>() {
     
@@ -33,7 +35,11 @@ class YourWorkoutsHomeAdapter: RecyclerView.Adapter<YourWorkoutsHomeAdapter.Your
         val item = list[position]
         holder.button.text = item.toString()
         
-        //set on click listener, do the navigation bullshit
+        holder.button.setOnClickListener {
+            val action =
+                YourWorkoutsHomeFragmentDirections.actionYourWorkoutsHomeFragmentToYourWorkoutsDetailFragment2()
+            holder.view.findNavController().navigate(action)
+        }
     }
     
 }
