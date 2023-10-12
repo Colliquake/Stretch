@@ -3,7 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/nav_graph"
-    app:startDestination="@id/yourWorkoutsHomeFragment">
+    app:startDestination="@id/exploreHomeFragment">
 
     <fragment
         android:id="@+id/yourWorkoutsHomeFragment"
@@ -11,15 +11,33 @@
         android:label="fragment_your_workouts_home"
         tools:layout="@layout/fragment_your_workouts_home" >
         <action
-            android:id="@+id/action_yourWorkoutsHomeFragment_to_yourWorkoutsDetailFragment2"
-            app:destination="@id/yourWorkoutsDetailFragment2" />
+            android:id="@+id/action_yourWorkoutsHomeFragment_to_yourWorkoutsDetailFragment"
+            app:destination="@id/yourWorkoutsDetailFragment" />
     </fragment>
     <fragment
-        android:id="@+id/yourWorkoutsDetailFragment2"
+        android:id="@+id/yourWorkoutsDetailFragment"
         android:name="com.example.stretch.YourWorkoutsDetailFragment"
         android:label="fragment_your_workouts_detail"
         tools:layout="@layout/fragment_your_workouts_detail" >
         <argument android:name="workout_id"
+            app:argType="integer" />
+    </fragment>
+    <fragment
+        android:id="@+id/exploreHomeFragment"
+        android:name="com.example.stretch.ExploreHomeFragment"
+        android:label="fragment_explore_home"
+        tools:layout="@layout/fragment_explore_home" >
+        <action
+            android:id="@+id/action_exploreHomeFragment_to_exploreCategoriesFragment"
+            app:destination="@id/exploreCategoriesFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/exploreCategoriesFragment"
+        android:name="com.example.stretch.ExploreCategoriesFragment"
+        android:label="fragment_explore_categories"
+        tools:layout="@layout/fragment_explore_categories" >
+        <argument
+            android:name="id"
             app:argType="integer" />
     </fragment>
 </navigation>
