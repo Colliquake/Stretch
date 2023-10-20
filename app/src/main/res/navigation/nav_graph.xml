@@ -39,5 +39,17 @@
         <argument
             android:name="id"
             app:argType="integer" />
+        <action
+            android:id="@+id/action_exploreCategoriesFragment_to_categoryItemsFragment"
+            app:destination="@id/categoryItemsFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/categoryItemsFragment"
+        android:name="com.example.stretch.CategoryItemsFragment"
+        android:label="fragment_category_items"
+        tools:layout="@layout/fragment_category_items" >
+        <argument
+            android:name="category"
+            app:argType="string" />
     </fragment>
 </navigation>
