@@ -63,5 +63,8 @@
         <argument
             android:name="exerciseItem"
             app:argType="string" />
+        <argument
+            android:name="categoryName"
+            app:argType="string" />
     </fragment>
 </navigation>

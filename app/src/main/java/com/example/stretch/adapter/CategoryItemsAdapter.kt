@@ -16,6 +16,8 @@ class CategoryItemsAdapter(category: String, context: Context) :
     
     val data: Array<String>
     
+    val category = category
+    
     init {
         val resString = when (category) {
             "chest" -> R.array.chest
@@ -53,7 +55,7 @@ class CategoryItemsAdapter(category: String, context: Context) :
         holder.item.text = item
         
         holder.item.setOnClickListener {
-            val action = CategoryItemsFragmentDirections.actionCategoryItemsFragmentToExerciseItemFragment(item)
+            val action = CategoryItemsFragmentDirections.actionCategoryItemsFragmentToExerciseItemFragment(item, category)
             holder.view.findNavController().navigate(action)
         }
     }

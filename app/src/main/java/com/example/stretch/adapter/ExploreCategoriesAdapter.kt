@@ -29,7 +29,6 @@ class ExploreCategoriesAdapter(categoryId: Int) :
                 "Abs",
                 "Calves",
                 "Forearm Flexors",
-                "Forearm Flexors",
                 "Forearm Extensors",
                 "Cardio Training"
             )
