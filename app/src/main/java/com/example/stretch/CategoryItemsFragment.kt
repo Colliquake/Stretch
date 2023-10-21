@@ -24,10 +24,14 @@ class CategoryItemsFragment : Fragment() {
     
     private var category: String? = null
     
+    companion object {
+        const val SEARCH_PREFIX = "http://www.strengthlog.com/"
+    }
+    
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         
-        arguments?.let{
+        arguments?.let {
             category = it.getString("category")
         }
     }

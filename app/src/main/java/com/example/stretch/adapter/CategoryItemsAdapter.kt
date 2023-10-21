@@ -5,7 +5,9 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
+import androidx.navigation.findNavController
 import androidx.recyclerview.widget.RecyclerView
+import com.example.stretch.CategoryItemsFragmentDirections
 import com.example.stretch.R
 import java.security.AccessController.getContext
 
@@ -32,7 +34,7 @@ class CategoryItemsAdapter(category: String, context: Context) :
         data = context.resources.getStringArray(resString)
     }
     
-    class CategoryItemsViewHolder(view: View) : RecyclerView.ViewHolder(view) {
+    class CategoryItemsViewHolder(val view: View) : RecyclerView.ViewHolder(view) {
         val item = view.findViewById<Button>(R.id.category_item)
     }
     
@@ -49,6 +51,11 @@ class CategoryItemsAdapter(category: String, context: Context) :
     override fun onBindViewHolder(holder: CategoryItemsViewHolder, position: Int) {
         val item = data[position]
         holder.item.text = item
+        
+        holder.item.setOnClickListener {
+            val action = CategoryItemsFragmentDirections.actionCategoryItemsFragmentToExerciseItemFragment(item)
+            holder.view.findNavController().navigate(action)
+        }
     }
     
 }

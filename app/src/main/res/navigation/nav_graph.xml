@@ -51,5 +51,17 @@
         <argument
             android:name="category"
             app:argType="string" />
+        <action
+            android:id="@+id/action_categoryItemsFragment_to_exerciseItemFragment"
+            app:destination="@id/exerciseItemFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/exerciseItemFragment"
+        android:name="com.example.stretch.ExerciseItemFragment"
+        android:label="fragment_exercise_item"
+        tools:layout="@layout/fragment_exercise_item" >
+        <argument
+            android:name="exerciseItem"
+            app:argType="string" />
     </fragment>
 </navigation>
